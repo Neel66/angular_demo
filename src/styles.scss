@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root{
+    --primary-color : #f44336
+}
+
+.loader-wrap {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// .loader-wrap mat-spinner svg {
+//     width: 92px !important;
+// }
+
+.loader-wrap .mat-mdc-progress-spinner .mdc-circular-progress__indeterminate-circle-graphic{
+    stroke: var(--primary-color);
+}
+
+.primary-background{
+    background-color: var(--primary-color) !important;
+}
+
+

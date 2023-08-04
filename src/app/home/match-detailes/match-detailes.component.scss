@@ -1,0 +1,41 @@
+table {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+
+  .content-header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 60px;
+  }
+
+  .mat-column-pick{
+    width : 2%
+  }
+  .mat-column-keyStats {
+    width: 50%;
+  }
+  
+  .mat-column-market {
+    width: 35%;
+  }
+  
+  .mat-column-outcome {
+    width: 13%;
+  }
+
+  .header{
+    background: linear-gradient(110deg, var(--primary-color) 25%, #000000 10%);
+    font-size: 2vw;
+  }
+
+  
+@media(max-width: 600px) {
+  .mat-row { 
+    flex-direction: column;
+    align-items: start;
+    padding: 8px 24px;
+  }
+}

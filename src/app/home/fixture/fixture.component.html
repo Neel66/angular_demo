@@ -1,0 +1,39 @@
+ 
+ <div class="loader-wrap" *ngIf="loaderShow">
+  <mat-spinner></mat-spinner>
+</div>
+<app-home> </app-home>
+ <div class="w-full min-w-0 h-100" *ngIf="!loaderShow">
+<div class="mx-1 mb-4 d-flex align-items-center justify-content-center w-full" >
+    <!-- <mat-chip-listbox>
+      <mat-chip-option color="warn" [selected]="(day  | date) === (selectedDate | date)" *ngFor="let day of dates;let i = index" (click)="getFixture(day)">{{ day | date}}</mat-chip-option>
+    </mat-chip-listbox> -->
+    <div class="w-full d-flex overflow-x-auto">
+      <div class="border rounded-pill p-2 h6 mx-1 w-full chip" [ngClass]="{'primary-background' : (day  | date) === (selectedDate | date) ?  true :  false, 'text-white' : (day  | date) === (selectedDate | date) ?  true :  false}" (click)="getFixture(day)" *ngFor="let day of dates;let i = index">
+        {{ day | date}}</div>
+    </div>
+  </div>
+  <div class="mx-2">
+  <div>
+      <p class="h5">  <img src="assets/football.webp" width="45">Football</p>
+      <div class="card border-1 rounded my-2">
+          <div class="w-full text-center mt-2" *ngFor="let match of fixture | keyvalue">
+            <p class="primary-background text-white py-2 h5">{{match.key}}</p>
+            <div class="bg-light text-dark h6">
+              <ng-container *ngIf="match.value.length > 0">
+                <div *ngFor="let league of match.value">
+                   <p (click)="getMatchInformation(league)" class="cursor-pointer h6"><span>{{league.Team1Name}}</span><span class="mx-2 text-muted">{{league.MatchTime}}</span><span>{{league.Team2Name}}</span> </p>
+               </div>
+              </ng-container>
+              <ng-container *ngIf="match.value.length === 0">
+              <p >Today no match available!</p>
+              </ng-container>
+            </div>
+          
+            
+            
+          </div>
+      </div>
+  </div>
+</div>
+</div>
