@@ -9,7 +9,7 @@
       <mat-chip-option color="warn" [selected]="(day  | date) === (selectedDate | date)" *ngFor="let day of dates;let i = index" (click)="getFixture(day)">{{ day | date}}</mat-chip-option>
     </mat-chip-listbox> -->
     <div class="w-full d-flex overflow-x-auto">
-      <div class="border rounded-pill p-2 h6 mx-1 w-full chip" [ngClass]="{'primary-background' : (day  | date) === (selectedDate | date) ?  true :  false, 'text-white' : (day  | date) === (selectedDate | date) ?  true :  false}" (click)="getFixture(day)" *ngFor="let day of dates;let i = index">
+      <div class="border rounded-pill text-center py-2 h6 mx-1 w-full chip" [ngClass]="{'primary-background' : (day  | date) === (selectedDate | date) ?  true :  false, 'text-white' : (day  | date) === (selectedDate | date) ?  true :  false}" (click)="getFixture(day)" *ngFor="let day of dates;let i = index">
         {{ day | date}}</div>
     </div>
   </div>

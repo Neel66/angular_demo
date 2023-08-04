@@ -11,8 +11,8 @@
       <p class="primary-background text-white h2 py-2 px-5 my-3">Make It A Bet Builder?</p>
 
       <div class="text-white w-100 d-flex pt-2 header text-center">
-        <div class="w-25"><p>{{matchDetails.MatchDate  | date:"MM/dd/yy"}} </p><p> {{matchDetails.MatchTime}}</p></div> 
-        <div class="w-75"><p>{{matchDetails.MatchName}}</p> <p> {{matchDetails.LeagueName}}</p>
+        <div class="w-25"><p class="h6">{{matchDetails.MatchDate  | date:"MM/dd/yy"}} </p><p class="h6"> {{matchDetails.MatchTime}}</p></div> 
+        <div class="w-75"><p class="h5">{{matchDetails.MatchName}}</p> <p class="h5"> {{matchDetails.LeagueName}}</p>
            </div>
       </div>
 
@@ -35,7 +35,7 @@
         <p class="h5" *ngIf="betBuilderDetails">Bet Builder Odds: <span class="text-danger">
             {{betBuilderDetails.TotalOdds}}
         </span></p>
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 overflow-x-auto">
            <ng-container matColumnDef="pick">
               <th mat-header-cell *matHeaderCellDef  class="text-danger"> Pick </th>
               <td mat-cell *matCellDef="let element;  let i = index;"> {{i+1}} </td>
@@ -63,8 +63,6 @@
                 </td>
             </tr>
           </table>
-          
-          
-      </div>
+        </div>
 </div>
 </div>
